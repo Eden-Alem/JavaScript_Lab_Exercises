@@ -69,5 +69,9 @@
         
     });
 
+    // Prompt for user to enter weight and height for BMI calculation making use of the function with formula and conditions
+    person.weight = prompt(`Please enter your weight in kilograms?`);
+    person.height = prompt(`Please enter your height in meters?`);
+    console.log(person.CalcBMI(person.weight, person.height));
 
 })();
