@@ -55,6 +55,19 @@
     // Check eligibility of user based on age
     person.isEligible = tempAge >= 15 ? true : false;
     console.log(`${person.firstName} ${person.lastName} has an eligibility to vote of ${person.isEligible}`);
+    
+    // Create an array to append identifications of family members of the user
+    person.familyMember = new Array();
+    let numberOfFamily = prompt("Your number of Family? ");
+    for (let index = 0; index < Number(numberOfFamily); index++) {
+        person.familyMember[index] = prompt(`Please enter the identification of your family member set on number ${index + 1}?`);
+        
+    }
+    console.log(`${person.firstName} ${person.lastName}'s family members:`);
+    person.familyMember.forEach(element => {
+        console.log(`Family member: ${element}`);
+        
+    });
 
 
 })();
