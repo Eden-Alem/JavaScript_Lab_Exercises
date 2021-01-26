@@ -17,5 +17,23 @@
     }
 
     
+    // Work on the functionality of transfering money from one user to another with user input and specified amount from user if the one that transfers has an amount greater or equal to 500 
+    // if the amount to transfer is not greater than the user's current amount and if after transfer the user that transfers has at least a 100 birr left in the account.
+    function transfer(from, to, transferAmount) {
+        if (from >= 500 && from.amount > transferAmount && (from.amount - transferAmount) >= 100) {
+            from -= transferAmount;
+            to += transferAmount;
+            return `The current amount in your bank account is ${from} and the total current amount of the bank account you transferred to is ${to}, thank you for using the service.`;
+        }
+        else {
+            console.log(`To transfer money from your account to another please make sure you have the right requirements as specified below:
+            - Make sure you have an amount of greater than 500 birr in your account currently
+            - Check if the amount you have inputed to transfer is lesser than the amount you have in your account currently
+            - Check if the amount you will be left with after transaction is conducted is at least greater or equal to a 100 birr
+            Please use the service again after checking these thank you!`)
+        }
+    }
+
+    
 })();
     
