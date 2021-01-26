@@ -87,6 +87,27 @@ function multiplication(a){
         })(prompt(`Enter the number of elements in the list to determine the minimum number?`))
     }
 
+    // Create a function for the functionality of returning the average of a list of numbers
+    else if(service.toLowerCase() === 'average') {
+        (function average(a) {
+            let elementsSum = 0;
+            let arrayElements = new Array();
+            for (let index = 0; index < a; index++) {
+                let arrayElement = prompt(`Enter one of the numbers?`)  
+                if (!isNaN(arrayElement)) {
+                    arrayElements.push(arrayElement);   
+                }   
+                else {
+                    console.log(`Please enter a valid number.`);
+                    return;
+                }
+            }
+            arrayElements.forEach(element => {
+                elementsSum += Number(element);
+            });
+            console.log(`The average of the list ${arrayElements} is ${elementsSum / a}`);
+        })(prompt(`Please enter the number of elements to calculate the average of the numbers?`));
+    }
 
     // Make sure to check for appropriate input from user for choosing a service
     else {
