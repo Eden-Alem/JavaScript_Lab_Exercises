@@ -16,7 +16,6 @@
         }  
     }
 
-    
     // Work on the functionality of transfering money from one user to another with user input and specified amount from user if the one that transfers has an amount greater or equal to 500 
     // if the amount to transfer is not greater than the user's current amount and if after transfer the user that transfers has at least a 100 birr left in the account.
     function transfer(from, to, transferAmount) {
@@ -34,6 +33,24 @@
         }
     }
 
-    
+    // prompt the user to choose from the services the user would like to use
+    let serve = prompt(`Please enter the service you would like to use? (withdraw, deposit, transfer)`);
+    if (serve.toLowerCase() === 'withdraw'){
+        bankAccount.withdrawalamount =  prompt(`Please enter the amount you would like to withdraw from your bank account with a current amount of ${bankAccount.amount}`);
+        console.log(bankAccount.withdrawal(bankAccount.withdrawalamount));
+    }
+    else if (serve.toLowerCase() === 'deposit') {
+        bankAccount.depositamount = prompt(`Please enter the amount you would like to deposit to your bank account?`);
+        console.log(bankAccount.deposit(bankAccount.depositamount));
+    }
+    else if (serve.toLowerCase() === 'transfer') {
+        let from = prompt(`Please enter the current amount in your bank account?`);
+        let to = prompt(`Please enter the current amount in the bank account you would like to transfer to?`);
+        let transferAmount = prompt(`Please enter the amount you would like to transfer?`);
+        console.log(transfer(from, to, transferAmount));
+    }
+    else {
+        console.log( `Please choose from the provided services and check your spelling; thank you!`);
+    }
 })();
     
