@@ -42,7 +42,7 @@ function multiplication(a){
             }
         })(prompt(`Enter the first number?`),prompt(`Enter the second number?`))
     }
-    
+
     // Create a function for the functionality of returning the maximum number from a list of numbers
     else if (service.toLowerCase() === 'maximum') {
         (function maximumOf(listLength){            
@@ -107,6 +107,18 @@ function multiplication(a){
             });
             console.log(`The average of the list ${arrayElements} is ${elementsSum / a}`);
         })(prompt(`Please enter the number of elements to calculate the average of the numbers?`));
+    }
+
+    // Create a function for the functionality of returning the square of a number
+    else if(service.toLowerCase() === 'square') {
+        (function square(a) {
+            if (!isNaN(a)) {
+                console.log(`The square of the number ${a} is ${a**2}`);
+            }
+            else {
+                console.log(`Please enter a valid number`);
+            }
+        })(prompt(`Please enter a number to calculate the square?`))
     }
 
     // Make sure to check for appropriate input from user for choosing a service
