@@ -42,6 +42,51 @@ function multiplication(a){
             }
         })(prompt(`Enter the first number?`),prompt(`Enter the second number?`))
     }
+    
+    // Create a function for the functionality of returning the maximum number from a list of numbers
+    else if (service.toLowerCase() === 'maximum') {
+        (function maximumOf(listLength){            
+            let listElements = new Array();
+            for (let index = 0; index < listLength; index++) {
+                let listElement = prompt(`Enter one of the numbers?`);
+                if (!isNaN(listElement)) {
+                    listElements.push(listElement);
+                }  
+                else {
+                    console.log(`Please enter a valid number`);
+                    return;
+                }     
+            }
+            let maxValue = listElements[0];
+            listElements.forEach(element => {
+                maxValue = (element > maxValue) ? element : maxValue;
+            });
+            console.log( `The maximum value from the list ${listElements} is ${maxValue}`) 
+        })(prompt(`Enter the number of elements in the list to determine the maximum number?`))
+    }
+
+    // Create a function for the functionality of returning the minimum number from a list of numbers
+    else if(service.toLowerCase() === 'minimum'){
+        (function minimumOf(lengthOfList){            
+            let listofElements = new Array();
+            for (let index = 0; index < lengthOfList; index++) {
+                let elementOfList = prompt(`Enter one of the numbers?`);
+                if (!isNaN(elementOfList)) { 
+                    listofElements.push(elementOfList);
+                }   
+                else {
+                    console.log(`Please enter a valid number.`);
+                    return;
+                }   
+            }
+            let minValue = listofElements[0];
+            listofElements.forEach(element => {
+                minValue = (element < minValue) ? element : minValue;
+            });
+            console.log( `The minimum value from the list ${listofElements} is ${minValue}`   ) 
+        })(prompt(`Enter the number of elements in the list to determine the minimum number?`))
+    }
+
 
     // Make sure to check for appropriate input from user for choosing a service
     else {
