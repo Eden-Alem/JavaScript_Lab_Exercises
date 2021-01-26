@@ -42,5 +42,19 @@
         console.log(`Please enter a valid birth year`);
         return;
     }
+    
+    // calculate the age of the user from provided personal info data and a function that makes use of Date
+    let tempAge = person.ageCalc(person.age);
+    console.log(
+        `Here is your profile:
+        Your full name ${person.firstName} ${person.lastName}
+        Your profession is ${person.profession}
+        Your age is ${tempAge}`
+    );
+
+    // Check eligibility of user based on age
+    person.isEligible = tempAge >= 15 ? true : false;
+    console.log(`${person.firstName} ${person.lastName} has an eligibility to vote of ${person.isEligible}`);
+
 
 })();
